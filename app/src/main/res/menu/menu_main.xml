@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_tamas"
+        android:orderInCategory="100"
+        android:title="تماس با ما "/>
+
+    <item
+        android:id="@+id/edit_about"
+        android:orderInCategory="100"
+        android:title="درباره ما"/>
+    <item
+        android:id="@+id/edit_ruls"
+        android:orderInCategory="100"
+        android:title="قوانین"/>
+    <item
+        android:id="@+id/edit_soclial"
+        android:orderInCategory="100"
+        android:title="ما در شبکه های اجتماعی"/>
+    <item
+        android:id="@+id/edit_exit"
+        android:orderInCategory="100"
+        android:title="خروج"/>
+</menu>

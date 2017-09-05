@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <tabs>
+        <tab
+            id="@+id/profile"
+            icon="@drawable/account"
+            title="Calls"
+            activeColor="@color/colorAccent"
+            />
+        <tab
+            id="@+id/star"
+            icon="@drawable/star"
+            title="Groups"
+            activeColor="@color/colorAccent" />
+        <tab
+            id="@+id/Homei"
+            icon="@drawable/home"
+            title="Chats"
+            activeColor="@color/colorAccent"/>
+    </tabs>
+</PreferenceScreen>
