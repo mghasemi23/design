@@ -6,12 +6,16 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.like.LikeButton;
+import com.like.OnLikeListener;
 import com.makeramen.roundedimageview.RoundedTransformationBuilder;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
@@ -52,6 +56,19 @@ public class Adapter extends RecyclerView.Adapter<Adapter.holder> {
                 final Charity charity = charityList.get(position);
                 holder.Name.setText(charity.getName());
                 holder.song.setText(charity.getShortdescription());
+                    if (charity.isFav() == true)  holder.likeButton.setLiked(true);
+                holder.likeButton.setOnLikeListener(new OnLikeListener() {
+                    @Override
+                    public void liked(LikeButton likeButton) {
+                        charity.setFav(true);
+                    }
+
+                    @Override
+                    public void unLiked(LikeButton likeButton) {
+                        charity.setFav(false);
+                    }
+                });
+
 
               holder.cv.setOnClickListener(new View.OnClickListener() {
                   @Override
@@ -62,7 +79,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.holder> {
         Transformation transformation = new RoundedTransformationBuilder()
                 .borderColor(Color.BLACK)
                 .borderWidthDp(2)
-                .cornerRadiusDp(360 )
+                .cornerRadiusDp(15 )
                 .oval(false)
                 .build();
         Picasso.with(holder.itemView.getContext()).load(charity.getPhotoid()).transform(transformation).into(holder.Photo);
@@ -81,12 +98,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.holder> {
             TextView Name;
             TextView song;
             ImageView Photo;
+            LikeButton likeButton;
+          //  RatingBar ratingBar;
             holder(View itemView) {
                 super(itemView);
                 cv = (CardView) itemView.findViewById(R.id.cv);
                 Name = (TextView) itemView.findViewById(R.id.nameofcharity);
                 song = (TextView) itemView.findViewById(R.id.nameof_song);
                 Photo = (ImageView) itemView.findViewById(R.id.imageView);
+                likeButton = (LikeButton) itemView.findViewById(R.id.heart);
+               // ratingBar = (RatingBar) itemView.findViewById(R.id.ratingBar);
             }
 
         @Override

@@ -9,24 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.TransNav">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".LOgin">
 
         </activity>
-        <activity
-            android:name=".ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.TransNav" />
-        <activity
-            android:name=".act"
-            android:label="@string/title_activity_act" />
-        <activity android:name=".LOgin">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-        <activity android:name=".Spalsh"> </activity>
+        <activity android:name=".Spalsh" />
+        <activity android:name=".Detail"
+            android:label=""
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>

@@ -11,7 +11,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_above="@+id/bottom_nav">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -38,10 +39,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
-        android:layout_weight="1"
         app:itemBackground="?attr/colorPrimary"
         app:itemIconTint="@drawable/selector_bottombar_item"
-
         app:itemTextColor="@drawable/selector_bottombar_item"
         app:menu="@menu/bottombar_menu" />
 

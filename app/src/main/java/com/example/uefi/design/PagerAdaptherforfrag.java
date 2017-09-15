@@ -24,11 +24,11 @@ public class PagerAdaptherforfrag extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                detaiLFragment tab3 = new detaiLFragment();
-                return tab3;
-            case 1:
-                FragmentThree tab2 = new FragmentThree();
+                BlankFragment tab2 = new BlankFragment();
                 return tab2;
+            case 1:
+                BlankFragment tab20 = new BlankFragment();
+                return tab20;
 
             default:
                 return null;

@@ -1,16 +1,20 @@
 package com.example.uefi.design;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by uefi on 8/29/2017.
  */
 
-public class Charity {
+public class Charity implements Serializable {
     private String name;
     private String shortdescription;
     private  int  photoid;
-    private boolean fav;
+    private    boolean fav = false;
+
+
+
     private List<Charity> charityList;
 
     public Charity() {
@@ -59,5 +63,13 @@ public class Charity {
          return charityList;
     }
 
-
+    @Override
+    public String toString() {
+        return "Charity{" +
+                "name='" + name + '\'' +
+                ", shortdescription='" + shortdescription + '\'' +
+                ", photoid=" + photoid +
+                ", fav=" + fav +
+                '}';
+    }
 }
